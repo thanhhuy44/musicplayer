@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid_system.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+    <div class="app">
+        <div class="grid wide">
+            <div id="header">
+                <div class="row">
+                    <div class="col l-12 m-12 c-12 playlist__heading">
+                        <img src="./assets/img/playlist__img.jpg" alt="Playlist" class="playlist__img">
+                        <h2 class="playlist__name">
+                            Playlist của Huy
+                            <i class="fas fa-headphones-alt"></i>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div class="row sm-gutter">
+                    <div class="col l-o-1 l-10 m-o-1 m-10 c-12 quick__access">
+                        <label for="story__modal-checkbox" class="quick__play"><i class="fas fa-film"></i></label>
+                        <h3 class="story__title">Playlist này có gì?</h3>
+                    </div>
+                    <div class="col l-o-1 l-10 m-o-1 m-10 c-12 playlist__container">
+                        
+                    </div>
+                </div>
+                <audio id="song__audio" src=""></audio>
+            </div>
+            <div id="footer">
+                <div class="row sm-gutter">
+                    <div class="playing-song__bar">
+                        <div class="col l-4 m-3 c-3">
+                            <div class="song__playing">
+                                <img src="./assets/img/playlist__img.jpg" alt="Song Playing" class="song__playing-img">
+                                <div class="song__playing-info hide__on-mobile">
+                                    <h3 class="song__playing-name">Trốn Tìm</h3>
+                                    <p class="song__playing-singer">Đen Vâu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-4 m-6 c-6 song__direct">
+                            <div class="song__direct-bar">
+                                <div class="direct__btn repeat-song__btn"><i class="fas fa-redo"></i></div>
+                                <div class="direct__btn prev-song__btn"><i class="fas fa-step-backward"></i></div>
+                                <div class="direct__btn play-song__btn"><i class="pause__icon fas fa-pause"></i><i class="play__icon fas fa-play"></i></div>
+                                <div class="direct__btn next-song__btn"><i class="fas fa-step-forward"></i></div>
+                                <div class="direct__btn random-song__btn"><i class="fas fa-random"></i></div>
+                            </div>
+                            <input type="range" name="progress song" id="song__progress" value="0" step="0.1" min="0" max="100">
+                        </div>
+                        <div class="col l-4 m-3 c-3">
+                            <div class="song__options">
+                                <div class="change-volume__option">
+                                    <div class="change-volume__btn direct__btn">
+                                        <i class="mute__icon fas fa-volume-mute"></i>
+                                        <i class="unmute__icon fas fa-volume-up"></i>
+                                    </div>
+                                    <input class="volume__status" type="range" name="volume status" id="volume__status" value="0" step="0.1" min="0" max="100">
+                                </div>
+                                <label for="modal__full-screen" class="direct__btn fullscreen__option">
+                                    <i class="fas fa-expand-alt"></i>
+                                </label>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="checkbox" name="full-screen__check" id="modal__full-screen">
+    <div class="full-screen__modal">
+        <div class="full-screen__background">
+            <img class="full-screen__img" src="./assets/img/playlist__img.jpg">
+        </div>
+        <div class="full-screen__blur"></div>
+        <div class="grid wide">
+            <div class="row no-gutter">
+                <div class="col l-o-1 l-10 m-o-1 m-10 c-12 full-screen__player">
+                    <div class="player__song">
+                        <div class="player__info">
+                            <img src="./assets/img/playlist__img.jpg" class="player__img">
+                            <div class="player__desc">
+                                <h3 class="player__name">Trốn Tìm</h3>
+                                <p class="player__singer">Đen Vâu</p>
+                            </div>
+                        </div>
+                        <input type="range" name="progress song" id="player__progress" value="0" step="0.1" min="0" max="100">
+                        <div class="player__direct">
+                            <div class="full-screen__repeat-song full-screen__direct-btn"><i class="fas fa-redo"></i></div>
+                            <div class="full-screen__direct-btn full-screen__prev-song"><i class="fas fa-step-backward"></i></div>
+                            <div class="full-screen__direct-btn full-screen__play-song"><i class="pause__icon fas fa-pause"></i><i class="play__icon fas fa-play"></i></div>
+                            <div class="full-screen__direct-btn full-screen__next-song"><i class="fas fa-step-forward"></i></div>
+                            <div class="full-screen__direct-btn full-screen__random-song"><i class="fas fa-random"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <label for="modal__full-screen" class="full-screen__close">
+            <i class="fas fa-compress-alt"></i>
+        </label>
+    </div>
+    <input type="checkbox" name="Story Music" id="story__modal-checkbox">
+    <div class="story__modal">
+        <div class="story__blur"></div>
+        <div class="story__background">
+            <img src="./assets/img/playlist__img.jpg" alt="" class="story__background-img">
+        </div>
+        <label for="story__modal-checkbox" class="story__close">
+            <i class="fas fa-times"></i>
+        </label>
+        <audio id="story__audio" src=""></audio>
+    </div>
+
+</body>
+<script src="./assets/javascript/main.js"></script>
+</html>
